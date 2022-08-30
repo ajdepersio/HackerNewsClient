@@ -77,10 +77,10 @@ dotnet_style_qualification_for_property = false:suggestion
 dotnet_style_qualification_for_method = false:suggestion
 dotnet_style_qualification_for_event = false:suggestion
 
-# Types: use keywords instead of BCL types, and permit var only when the type is clear
-csharp_style_var_for_built_in_types = false:suggestion
-csharp_style_var_when_type_is_apparent = false:none
-csharp_style_var_elsewhere = false:suggestion
+# use var instead of explicit type
+csharp_style_var_for_built_in_types = true:suggestion
+csharp_style_var_when_type_is_apparent = true:suggestion
+csharp_style_var_elsewhere = true:suggestion
 dotnet_style_predefined_type_for_locals_parameters_members = true:suggestion
 dotnet_style_predefined_type_for_member_access = true:suggestion
 
@@ -92,15 +92,12 @@ dotnet_naming_symbols.constant_fields.applicable_kinds   = field
 dotnet_naming_symbols.constant_fields.required_modifiers = const
 dotnet_naming_style.pascal_case_style.capitalization = pascal_case
 
-# static fields should have s_ prefix
-dotnet_naming_rule.static_fields_should_have_prefix.severity = suggestion
-dotnet_naming_rule.static_fields_should_have_prefix.symbols  = static_fields
-dotnet_naming_rule.static_fields_should_have_prefix.style = static_prefix_style
-dotnet_naming_symbols.static_fields.applicable_kinds   = field
-dotnet_naming_symbols.static_fields.required_modifiers = static
-dotnet_naming_symbols.static_fields.applicable_accessibilities = private, internal, private_protected
-dotnet_naming_style.static_prefix_style.required_prefix = s_
-dotnet_naming_style.static_prefix_style.capitalization = camel_case
+# name all properties using PascalCase
+dotnet_naming_rule.properties_should_be_pascal_case.severity = suggestion
+dotnet_naming_rule.properties_should_be_pascal_case.symbols = properties
+dotnet_naming_rule.properties_should_be_pascal_case.style = pascal_case_style
+dotnet_naming_symbols.properties.applicable_kinds = property
+dotnet_naming_style.pascal_case_style.capitalization = pascal_case
 
 # internal and private fields should be _camelCase
 dotnet_naming_rule.camel_case_for_private_internal_fields.severity = suggestion
@@ -114,7 +111,7 @@ dotnet_naming_style.camel_case_underscore_style.capitalization = camel_case
 # Code style defaults
 csharp_using_directive_placement = outside_namespace:suggestion
 dotnet_sort_system_directives_first = true
-csharp_prefer_braces = true:silent
+csharp_prefer_braces = true:suggestion
 csharp_preserve_single_line_blocks = true:none
 csharp_preserve_single_line_statements = false:none
 csharp_prefer_static_local_function = true:suggestion
@@ -200,38 +197,187 @@ csharp_style_prefer_parameter_null_checking = true:suggestion
 csharp_style_prefer_pattern_matching = true:silent
 csharp_style_prefer_not_pattern = true:suggestion
 csharp_style_prefer_extended_property_pattern = true:suggestion
+csharp_style_prefer_top_level_statements = true:silent
+csharp_style_prefer_utf8_string_literals = true:suggestion
 
-# C++ Files
+# Roslynator
+
+# RCS0001: Add blank line after embedded statement.
+dotnet_diagnostic.RCS0001.severity = suggestion
+
+# RCS0002: Add blank line after #region.
+dotnet_diagnostic.RCS0002.severity = suggestion
+
+# RCS0003: Add blank line after using directive list.
+dotnet_diagnostic.RCS0003.severity = suggestion
+
+# RCS0005: Add blank line before #endregion.
+dotnet_diagnostic.RCS0005.severity = suggestion
+
+# RCS0006: Add blank line before using directive list.
+dotnet_diagnostic.RCS0006.severity = suggestion
+
+# RCS0007: Add blank line between accessors.
+dotnet_diagnostic.RCS0007.severity = suggestion
+
+# RCS0008: Add blank line between closing brace and next statement.
+dotnet_diagnostic.RCS0008.severity = suggestion
+
+# RCS0009: Add blank line between declaration and documentation comment.
+dotnet_diagnostic.RCS0009.severity = suggestion
+
+# RCS0010: Add blank line between declarations.
+dotnet_diagnostic.RCS0010.severity = suggestion
+
+# RCS0011: Add/remove blank line between single-line accessors.
+dotnet_diagnostic.RCS0011.severity = suggestion
+
+# RCS0013: Add blank line between single-line declarations of different kind.
+dotnet_diagnostic.RCS0013.severity = suggestion
+
+# RCS0014: Add blank line between switch sections.
+dotnet_diagnostic.RCS0014.severity = suggestion
+
+# RCS0015: Add/remove blank line between using directives.
+dotnet_diagnostic.RCS0015.severity = suggestion
+
+# RCS0016: Put attribute list on its own line.
+dotnet_diagnostic.RCS0016.severity = suggestion
+
+# RCS0020: Format accessor's braces on a single line or multiple lines.
+dotnet_diagnostic.RCS0020.severity = suggestion
+
+# RCS0021: Format block's braces on a single line or multiple lines.
+dotnet_diagnostic.RCS0021.severity = suggestion
+
+# RCS0022: Add new line after opening brace of empty block.
+dotnet_diagnostic.RCS0022.severity = suggestion
+
+# RCS0023: Format type declaration's braces.
+dotnet_diagnostic.RCS0023.severity = suggestion
+
+# RCS0024: Add new line after switch label.
+dotnet_diagnostic.RCS0024.severity = suggestion
+
+# RCS0025: Put full accessor on its own line.
+dotnet_diagnostic.RCS0025.severity = suggestion
+
+# RCS0027: Place new line after/before binary operator.
+dotnet_diagnostic.RCS0027.severity = suggestion
+
+# RCS0028: Place new line after/before '?:' operator.
+dotnet_diagnostic.RCS0028.severity = suggestion
+
+# RCS0029: Put constructor initializer on its own line.
+dotnet_diagnostic.RCS0029.severity = suggestion
+
+# RCS0030: Add new line before embedded statement.
+dotnet_diagnostic.RCS0030.severity = suggestion
+
+# RCS0031: Put enum member on its own line.
+dotnet_diagnostic.RCS0031.severity = suggestion
+
+# RCS0032: Place new line after/before arrow token.
+dotnet_diagnostic.RCS0032.severity = suggestion
+
+# RCS0033: Add new line before statement.
+dotnet_diagnostic.RCS0033.severity = suggestion
+
+# RCS0034: Put type parameter constraint on its own line.
+dotnet_diagnostic.RCS0034.severity = suggestion
+
+# RCS0036: Remove blank line between single-line declarations of same kind.
+dotnet_diagnostic.RCS0036.severity = suggestion
+
+# RCS0038: Remove blank line between using directives with same root namespace.
+dotnet_diagnostic.RCS0038.severity = suggestion
+
+# RCS0039: Remove new line before base list.
+dotnet_diagnostic.RCS0039.severity = suggestion
+
+# RCS0041: Remove new line between 'if' keyword and 'else' keyword.
+dotnet_diagnostic.RCS0041.severity = suggestion
+
+# RCS0042: Put auto-accessors on a single line.
+dotnet_diagnostic.RCS0042.severity = suggestion
+
+# RCS0043: Format accessor's braces on a single line when expression is on single line.
+dotnet_diagnostic.RCS0043.severity = suggestion
+
+# RCS0044: Use carriage return + linefeed as new line.
+dotnet_diagnostic.RCS0044.severity = suggestion
+
+# RCS0046: Use spaces instead of tab.
+dotnet_diagnostic.RCS0046.severity = suggestion
+
+# RCS0047: [deprecated] Wrap and indent each node in list.
+dotnet_diagnostic.RCS0047.severity = suggestion
+
+# RCS0048: Put initializer on a single line.
+dotnet_diagnostic.RCS0048.severity = suggestion
+
+# RCS0049: Add blank line after top comment.
+dotnet_diagnostic.RCS0049.severity = suggestion
+
+# RCS0050: Add blank line before top declaration.
+dotnet_diagnostic.RCS0050.severity = suggestion
+
+# RCS0051: Add/remove new line before 'while' in 'do' statement.
+dotnet_diagnostic.RCS0051.severity = suggestion
+
+# RCS0052: Place new line after/before equals token.
+dotnet_diagnostic.RCS0052.severity = suggestion
+
+# RCS0053: Fix formatting of a list.
+dotnet_diagnostic.RCS0053.severity = suggestion
+
+# RCS0054: Fix formatting of a call chain.
+dotnet_diagnostic.RCS0054.severity = suggestion
+
+# RCS0055: Fix formatting of a binary expression chain.
+dotnet_diagnostic.RCS0055.severity = suggestion
+
+# RCS0056: A line is too long.
+dotnet_diagnostic.RCS0056.severity = suggestion
+
+# RCS0057: Normalize whitespace at the beginning of a file.
+dotnet_diagnostic.RCS0057.severity = suggestion
+
+# RCS0058: Normalize whitespace at the end of a file.
+dotnet_diagnostic.RCS0058.severity = suggestion
+
+# RCS0059: Place new line after/before null-conditional operator.
+dotnet_diagnostic.RCS0059.severity = suggestion
+
+# ROS0002: Analyzer option is obsolete
+dotnet_diagnostic.ROS0002.severity = suggestion
+
+# ROS0003: Analyzer requires config option to be specified
+dotnet_diagnostic.ROS0003.severity = suggestion
+
 [*.{cpp,h,in}]
 curly_bracket_next_line = true
 indent_brace_style = Allman
 
-# Xml project files
 [*.{csproj,vbproj,vcxproj,vcxproj.filters,proj,nativeproj,locproj}]
 indent_size = 2
 
 [*.{csproj,vbproj,proj,nativeproj,locproj}]
 charset = utf-8
 
-# Xml build files
 [*.builds]
 indent_size = 2
 
-# Xml files
 [*.{xml,stylecop,resx,ruleset}]
 indent_size = 2
 
-# Xml config files
 [*.{props,targets,config,nuspec}]
 indent_size = 2
 
-# YAML config files
 [*.{yml,yaml}]
 indent_size = 2
 
-# Shell scripts
 [*.sh]
 end_of_line = lf
 [*.{cmd,bat}]
 end_of_line = crlf
-

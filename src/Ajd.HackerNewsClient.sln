@@ -8,11 +8,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		.editorconfig = .editorconfig
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ajd.HackerNewsClient.Console", "Ajd.HackerNewsClient.Console\Ajd.HackerNewsClient.Console.csproj", "{F7E9847B-BEA8-4343-8FEB-9314FB9A38BB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ajd.HackerNewsClient.Console", "Ajd.HackerNewsClient.Console\Ajd.HackerNewsClient.Console.csproj", "{F7E9847B-BEA8-4343-8FEB-9314FB9A38BB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ajd.HackerNewsClient.Core", "Ajd.HackerNewsClient.Core\Ajd.HackerNewsClient.Core.csproj", "{9849E7CB-1FB0-41C1-B529-8EACEC1181BB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ajd.HackerNewsClient.Core", "Ajd.HackerNewsClient.Core\Ajd.HackerNewsClient.Core.csproj", "{9849E7CB-1FB0-41C1-B529-8EACEC1181BB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ajd.HackerNewsClient.Data", "Ajd.HackerNewsClient.Data\Ajd.HackerNewsClient.Data.csproj", "{674957FC-21B0-4680-BD7C-DC58892743FC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ajd.HackerNewsClient.Data", "Ajd.HackerNewsClient.Data\Ajd.HackerNewsClient.Data.csproj", "{674957FC-21B0-4680-BD7C-DC58892743FC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -60,5 +60,11 @@ Global
 		{674957FC-21B0-4680-BD7C-DC58892743FC}.Release|x64.Build.0 = Release|Any CPU
 		{674957FC-21B0-4680-BD7C-DC58892743FC}.Release|x86.ActiveCfg = Release|Any CPU
 		{674957FC-21B0-4680-BD7C-DC58892743FC}.Release|x86.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {3E17A285-500E-464A-9D76-49C5F42142C6}
 	EndGlobalSection
 EndGlobal
